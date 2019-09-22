@@ -4,7 +4,6 @@ url = "https://pypi.org/simple"
 verify_ssl = true
 
 [dev-packages]
-django-test-without-migrations = "*"
 ipython = "*"
 pre-commit = "*"
 black = "==18.9b0"
@@ -17,6 +16,7 @@ dj-database-url = "*"
 gunicorn = "*"
 dj-static = "*"
 django-extensions = "*"
+django-test-without-migrations = "*"
 
 [requires]
 python_version = "3.7"
