@@ -25,6 +25,26 @@ cp contrib/env-sample .env
 make test
 ```
 
+## Deployment
+
+These instructions will show you how to deploy this application on a live system using Heroku.
+
+1. Create a heroku app
+2. Set the configuration
+3. Set SECRET KEY, DEBUG, ALLOWED_HOSTS
+4. Set DEBUG false
+5. Deploy
+
+```console
+heroku create myinstance
+heroku config:push
+heroku config:set SECRET_KEY=`python contrib/secret_gen.py`
+heroku config:set DEBUG=False
+heroku config:set ALLOWED_HOSTS=.herokuapp.com
+git push heroku master
+```
+
+
 ## Built With
 
 * [Pipenv](https://docs.pipenv.org/en/latest/) - Dependency Management
