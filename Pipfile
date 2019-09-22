@@ -17,6 +17,7 @@ gunicorn = "*"
 dj-static = "*"
 django-extensions = "*"
 django-test-without-migrations = "*"
+psycopg2 = "*"
 
 [requires]
 python_version = "3.7"
