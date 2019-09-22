@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "ba143f52365efdf682c3a5f93d786b1706a9abd17a0b0c2c76ae06a39c90e30a"
+            "sha256": "99cb804cff9420f49c3e163070748dcf5602e84c67f7a1f39fce7762ed6f9dd0"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -39,6 +39,14 @@
             "index": "pypi",
             "version": "==2.2.5"
         },
+        "django-extensions": {
+            "hashes": [
+                "sha256:4aafdb865104eaa5d681b9976b36c52c9d441be89b7d782e40808f1c5c0c8f93",
+                "sha256:8a2552fdeb222b23895ef52cdc28fc56efba976f6da07ca92937f6f5e626e345"
+            ],
+            "index": "pypi",
+            "version": "==2.2.1"
+        },
         "djangorestframework": {
             "hashes": [
                 "sha256:5488aed8f8df5ec1d70f04b2114abc52ae6729748a176c453313834a9ee179c8",
@@ -69,6 +77,13 @@
             ],
             "version": "==2019.2"
         },
+        "six": {
+            "hashes": [
+                "sha256:3350809f0555b11f552448330d0b52d5f24c91a322ea4a15ef22629740f3761c",
+                "sha256:d16a0141ec1a18405cd4ce8b4613101da75da0e9a7aec5bdd4fa804d0e0eba73"
+            ],
+            "version": "==1.12.0"
+        },
         "sqlparse": {
             "hashes": [
                 "sha256:40afe6b8d4b1117e7dff5504d7a8ce07d9a1b15aeeade8a2d10f130a834f8177",
@@ -78,7 +93,6 @@
         },
         "static3": {
             "hashes": [
-                "sha256:398a9992e0021fd48c1f3e55319d6ff86b465bba66f4585af7961984aa809b38",
                 "sha256:674641c64bc75507af2eb20bef7e7e3593dca993dec6674be108fa15b42f47c8"
             ],
             "version": "==0.7.0"
@@ -149,14 +163,6 @@
                 "sha256:f069f3a01830ca754ba5258fde2278454a0b5b79e0d7f5c13b3b97e57d4acff6"
             ],
             "version": "==4.4.0"
-        },
-        "django-extensions": {
-            "hashes": [
-                "sha256:4aafdb865104eaa5d681b9976b36c52c9d441be89b7d782e40808f1c5c0c8f93",
-                "sha256:8a2552fdeb222b23895ef52cdc28fc56efba976f6da07ca92937f6f5e626e345"
-            ],
-            "index": "pypi",
-            "version": "==2.2.1"
         },
         "django-test-without-migrations": {
             "hashes": [
