@@ -1,0 +1,20 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+django-extensions = "*"
+django-test-without-migrations = "*"
+ipython = "*"
+black = "*"
+pre-commit = "*"
+
+[packages]
+django = "*"
+python-decouple = "*"
+djangorestframework = "*"
+dj-database-url = "*"
+
+[requires]
+python_version = "3.7"
