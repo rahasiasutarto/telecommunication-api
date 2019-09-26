@@ -4,7 +4,7 @@ from telecom.calls.models import CallRecord, EndRecord, StartRecord
 
 class CallRecordSerializer(serializers.ModelSerializer):
     class Meta:
-        model = StartRecord
+        model = CallRecord
         fields = "__all__"
 
 
@@ -19,12 +19,12 @@ class StartRecordSerializer(serializers.ModelSerializer):
         if "start" not in data["type"]:
             raise serializers.ValidationError("The type of call must be start.")
 
-        if data["source"] is None or data["source"] == "":
+        if data["source"] is None or data["source"] is False:
             raise serializers.ValidationError(
                 "A start call must have a source phone number."
             )
 
-        if data["destination"] is None or data["destination"] == "":
+        if data["destination"] is None or data["destination"] is False:
             raise serializers.ValidationError(
                 "A start call must have a destination phone number."
             )

@@ -1,7 +1,6 @@
-import pytest
-
 from datetime import datetime
-from model_mommy import mommy
+
+import pytest
 from telecom.calls.models import EndRecord, StartRecord
 from telecom.calls.serializers import EndRecordSerializer, StartRecordSerializer
 
@@ -13,23 +12,23 @@ def test_required_fields():
     start_serializer = StartRecordSerializer(data={})
     end_serializer = EndRecordSerializer(data={})
 
-    assert False == start_serializer.is_valid()
+    assert start_serializer.is_valid() is False
     assert len(fields) == len(start_serializer.errors)
 
-    assert False == end_serializer.is_valid()
+    assert end_serializer.is_valid() is False
     assert len(fields) == len(end_serializer.errors)
 
 
 def test_create_valid_start_record():
     start_record = {
         "call_id": 1,
-        "type": "start",
+        "type": StartRecord.START_RECORD,
         "timestamp": datetime.now(),
         "source": "61982027277",
         "destination": "61988774456",
     }
     serializer = StartRecordSerializer(data=start_record)
-    assert True == serializer.is_valid()
+    assert serializer.is_valid() is True
 
 
 def test_create_valid_end_record():
@@ -39,14 +38,14 @@ def test_create_valid_end_record():
         "timestamp": datetime.now(),
     }
     serializer = EndRecordSerializer(data=end_record)
-    assert True == serializer.is_valid()
+    assert serializer.is_valid() is True
 
 
 def test_create_invalid_start_record():
     serializer = StartRecordSerializer(data=None)
-    assert False == serializer.is_valid()
+    assert serializer.is_valid() is False
 
 
 def test_create_invalid_end_record():
     serializer = EndRecordSerializer(data=None)
-    assert False == serializer.is_valid()
+    assert serializer.is_valid() is False
