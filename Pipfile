@@ -16,8 +16,10 @@ dj-database-url = "*"
 gunicorn = "*"
 dj-static = "*"
 django-extensions = "*"
-django-test-without-migrations = "*"
 psycopg2-binary = "*"
+pytest = "*"
+pytest-django = "*"
+model-mommy = "*"
 
 [requires]
 python_version = "3.7"

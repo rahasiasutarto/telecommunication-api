@@ -11,17 +11,17 @@ migrations:
 	python manage.py makemigrations
 	python manage.py migrate
 
-nomigrations:
-	python manage.py test --nomigrations
-
 pyformat:
 	black .
 
 run:
 	python manage.py runserver
 
+shell:
+	python manage.py shell_plus
+
 test:
-	python manage.py test
+	pytest -sx
 
 
 
