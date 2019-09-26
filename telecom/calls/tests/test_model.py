@@ -3,7 +3,6 @@ from django.core.exceptions import ValidationError
 from django.db import IntegrityError
 from django.utils import timezone
 from model_mommy import mommy
-
 from telecom.calls.managers import EndManager, StartManager
 from telecom.calls.models import EndRecord, StartRecord
 
@@ -29,8 +28,10 @@ def end_call():
 
 
 def test_create_call_records(start_call, end_call):
-    assert StartRecord.objects.exists()
-    assert EndRecord.objects.exists()
+    assert (
+        StartRecord.objects.exists() is True
+        and EndRecord.objects.exists() is True
+    )
 
 
 def test_str(start_call, end_call):
@@ -71,5 +72,4 @@ def test_invalid_phone_number(number):
 @pytest.mark.parametrize("field_name", ["source", "destination"])
 def test_fields_can_be_blank_or_null(field_name):
     field = EndRecord._meta.get_field(field_name)
-    assert field.blank == True
-    assert field.null == True
+    assert field.blank is True and field.null is True
