@@ -9,14 +9,13 @@ class CallRecordSerializer(serializers.ModelSerializer):
 
 
 class StartRecordSerializer(serializers.ModelSerializer):
-    id = serializers.ReadOnlyField()
-
     class Meta:
         model = StartRecord
         fields = ["id", "call_id", "type", "timestamp", "source", "destination"]
+        read_only_fields = ["id"]
 
     def validate(self, data):
-        if "start" not in data["type"]:
+        if CallRecord.START_RECORD not in data["type"]:
             raise serializers.ValidationError("The type of call must be start.")
 
         if data["source"] is None or data["source"] is False:
@@ -36,9 +35,20 @@ class EndRecordSerializer(serializers.ModelSerializer):
     class Meta:
         model = EndRecord
         fields = ["id", "call_id", "type", "timestamp"]
+        read_only_fields = ["account_name"]
 
     def validate(self, data):
-        if "end" not in data["type"]:
-            raise serializers.ValidationError("The type of call must be start.")
+        if CallRecord.END_RECORD not in data["type"]:
+            raise serializers.ValidationError("The type of call must be end.")
+
+        if data["type"] == CallRecord.END_RECORD and "source" in data:
+            raise serializers.ValidationError(
+                "A end call must not have a source number."
+            )
+
+        if data["type"] == CallRecord.END_RECORD and "destination" in data:
+            raise serializers.ValidationError(
+                "A end call must not have a destination number."
+            )
 
         return data

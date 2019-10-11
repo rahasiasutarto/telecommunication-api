@@ -5,8 +5,8 @@ import pytest
 from django.shortcuts import resolve_url
 from model_mommy import mommy
 from rest_framework import status
+from telecom.calls.converters import timestamp_converter
 from telecom.calls.models import EndRecord, StartRecord
-from telecom.calls.utils import timestamp_converter
 
 pytestmark = pytest.mark.django_db
 

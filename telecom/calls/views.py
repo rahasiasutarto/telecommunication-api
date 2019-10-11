@@ -32,3 +32,8 @@ class EndRecordViewSet(viewsets.ModelViewSet):
 
     queryset = EndRecord.objects.all()
     serializer_class = EndRecordSerializer
+
+
+call_records_view = CallRecordsViewSet
+start_records_view = StartRecordViewSet
+end_records_view = EndRecordViewSet
