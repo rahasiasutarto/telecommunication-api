@@ -28,6 +28,7 @@ INSTALLED_APPS = [
     "django_extensions",
     "rest_framework",
     "telecom.calls.apps.CallsConfig",
+    "telecom.bills",
 ]
 
 MIDDLEWARE = [
@@ -104,3 +105,6 @@ USE_TZ = True
 
 STATIC_URL = "/static/"
 STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
+
+# DRF Configuration
+REST_FRAMEWORK = {"DATETIME_FORMAT": "%Y-%m-%dT%H:%M:%S"}
