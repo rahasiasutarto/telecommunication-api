@@ -27,6 +27,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "django_extensions",
     "rest_framework",
+    "rest_framework_swagger",
     "telecom.calls.apps.CallsConfig",
     "telecom.bills",
 ]
@@ -107,4 +108,7 @@ STATIC_URL = "/static/"
 STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 
 # DRF Configuration
-REST_FRAMEWORK = {"DATETIME_FORMAT": "%Y-%m-%dT%H:%M:%S"}
+REST_FRAMEWORK = {
+    "DATETIME_FORMAT": "%Y-%m-%dT%H:%M:%S",
+    "DEFAULT_SCHEMA_CLASS": "rest_framework.schemas.coreapi.AutoSchema",
+}
