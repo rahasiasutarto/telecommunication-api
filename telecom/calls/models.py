@@ -50,7 +50,7 @@ class CallRecord(models.Model):
         verbose_name = "call"
         verbose_name_plural = "calls"
         unique_together = ("call_id", "type")
-        ordering = ("-type", "-timestamp")
+        ordering = ("-call_id",)
 
     def __str__(self):
         return f"Call {self.type} #{self.call_id}"
