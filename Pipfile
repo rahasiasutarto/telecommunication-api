@@ -20,6 +20,7 @@ psycopg2-binary = "*"
 pytest = "*"
 pytest-django = "*"
 model-mommy = "*"
+django-rest-swagger = "*"
 
 [requires]
 python_version = "3.7"
