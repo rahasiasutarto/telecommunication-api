@@ -1,4 +1,4 @@
-# Olist Test
+# Telecom Python Test
 
 This application aims to receives calls with details records, and calculates monthly bills for a given telephone number using a HTTP REST API to attend the requirements.
 
