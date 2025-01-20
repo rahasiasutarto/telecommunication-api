@@ -6,7 +6,7 @@
 __pycache__/
 *.py[cod]
 *$py.class
-
+edit-info.sh*
 # Distribution / packaging
 .Python
 build/
